@@ -142,6 +142,13 @@ PRODUCT_COPY_FILES += \
     $(SONY_PREBUILTS)/lib/libqti-perfd-client.so:system/vendor/lib/libqti-perfd-client.so \
     $(SONY_PREBUILTS)/lib64/libqti-perfd-client.so:system/vendor/lib64/libqti-perfd-client.so 
 
+# QMUXD
+PRODUCT_COPY_FILES += \
+    $(SONY_PREBUILTS)/bin/qmuxd:system/bin/qmuxd \
+    $(SONY_PREBUILTS)/lib/libqomx_core.so:system/lib/libqomx_core.so \
+    $(SONY_PREBUILTS)/lib/librmnetctl.so:system/lib/librmnetctl.so \
+    $(SONY_PREBUILTS)/lib64/librmnetctl.so:system/lib64/librmnetctl.so 
+
 #Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
