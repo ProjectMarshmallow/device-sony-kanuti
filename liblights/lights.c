@@ -62,8 +62,8 @@ static struct led_desc {
 } led_descs[] = {
 	[LED_BACKLIGHT] = {
 		.max_brightness = 0,
-		.max_brightness_s = "/sys/class/leds/wled:backlight/max_brightness",
-		.brightness = "/sys/class/leds/wled:backlight/brightness",
+		.max_brightness_s = "/sys/class/leds/W/max_brightness",
+		.brightness = "/sys/class/leds/W/brightness",
 	},
 	[LED_BKLT_MDSS] = {
 		.max_brightness = 0,
@@ -72,24 +72,24 @@ static struct led_desc {
 	},
 	[LED_RED] = {
 		.max_brightness = 0,
-		.max_brightness_s = "/sys/class/leds/led:rgb_red/max_brightness",
-		.brightness = "/sys/class/leds/led:rgb_red/brightness",
-		.pwm = "/sys/class/leds/led:rgb_red/lut_pwm",
-		.step = "/sys/class/leds/led:rgb_red/step_duration",
+		.max_brightness_s = "/sys/class/leds/R/max_brightness",
+		.brightness = "/sys/class/leds/R/brightness",
+		.pwm = "/sys/class/leds/R/lut_pwm",
+		.step = "/sys/class/leds/R/step_duration",
 	},
 	[LED_GREEN] = {
 		.max_brightness = 0,
-		.max_brightness_s = "/sys/class/leds/led:rgb_green/max_brightness",
-		.brightness = "/sys/class/leds/led:rgb_green/brightness",
-		.pwm = "/sys/class/leds/led:rgb_green/lut_pwm",
-		.step = "/sys/class/leds/led:rgb_green/step_duration",
+		.max_brightness_s = "/sys/class/leds/G/max_brightness",
+		.brightness = "/sys/class/leds/G/brightness",
+		.pwm = "/sys/class/leds/G/lut_pwm",
+		.step = "/sys/class/leds/G/step_duration",
 	},
 	[LED_BLUE] = {
 		.max_brightness = 0,
-		.max_brightness_s = "/sys/class/leds/led:rgb_blue/max_brightness",
-		.brightness = "/sys/class/leds/led:rgb_blue/brightness",
-		.pwm = "/sys/class/leds/led:rgb_blue/lut_pwm",
-		.step = "/sys/class/leds/led:rgb_blue/step_duration",
+		.max_brightness_s = "/sys/class/leds/B/max_brightness",
+		.brightness = "/sys/class/leds/B/brightness",
+		.pwm = "/sys/class/leds/B/lut_pwm",
+		.step = "/sys/class/leds/B/step_duration",
 	},
 };
 
@@ -422,3 +422,4 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
 	.author = "Bjorn Andersson <bjorn.andersson@sonymobile.com>",
 	.methods = &lights_module_methods,
 };
+
