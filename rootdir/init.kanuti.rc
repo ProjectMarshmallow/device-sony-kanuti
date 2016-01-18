@@ -374,6 +374,11 @@ service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-w
     user root
     oneshot
 
+service perfd /system/bin/perfd
+   class main
+   user root
+   disabled
+
 service wcnss_service /system/bin/wcnss_service
     class main
     user system

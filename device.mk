@@ -135,6 +135,13 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
     $(SONY_ROOT)/system/usr/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
+
+# Perfd
+PRODUCT_COPY_FILES += \
+    $(SONY_PREBUILTS)/bin/perfd:system/bin/perfd \
+    $(SONY_PREBUILTS)/lib/libqti-perfd-client.so:system/vendor/lib/libqti-perfd-client.so \
+    $(SONY_PREBUILTS)/lib64/libqti-perfd-client.so:system/vendor/lib64/libqti-perfd-client.so 
+
 #Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
