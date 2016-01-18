@@ -1,7 +1,8 @@
-ifeq ($(filter-out tulip,$(TARGET_DEVICE)),)
-
 LOCAL_PATH := $(call my-dir)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
-
+ifeq ($(BOARD_VENDOR),sony)
+ifeq ($(TARGET_BOARD_PLATFORM),msm8916)
+    include $(call all-subdir-makefiles,$(LOCAL_PATH))
+    include hardware/sony/thermanager/dummy.mk
+endif
 endif

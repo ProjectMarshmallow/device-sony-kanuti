@@ -270,4 +270,5 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp \
     persist.data.qmi.adb_logmask=0
 
+
 $(call inherit-product, vendor/sony/kanuti-common/kanuti-common-vendor-blobs.mk)

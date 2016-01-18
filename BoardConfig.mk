@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/kanuti/kernel-headers
-
 TARGET_BOARD_PLATFORM := msm8916
 
 TARGET_ARCH := arm64
@@ -33,6 +31,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RECOVERY := false
 TARGET_NO_KERNEL := false
 
+TARGET_KERNEL_SOURCE := kernel/sony/kernel-copyleft
 TARGET_USES_64_BIT_BINDER := true
 
 BOARD_KERNEL_BASE        := 0x80000000
@@ -41,9 +40,11 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
 BOARD_KERNEL_BOOTIMG := true
-BOARD_CUSTOM_MKBOOTIMG := mkqcdtbootimg
-BOARD_MKBOOTIMG_ARGS := --dt_dir $(OUT)/dtbs
-BOARD_MKBOOTIMG_ARGS +=  --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --dt_version 2
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/kanuti/boot/custombootimg.mk
+TARGET_DTB_EXTRA_FLAGS := --force-v2
+
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
@@ -53,8 +54,10 @@ TARGET_USES_UNCOMPRESSED_KERNEL := true
 BOARD_KERNEL_CMDLINE :=console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=kanuti user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 
 BOARD_KERNEL_CMDLINE +=androidboot.selinux=permissive dwc3.maximum_speed=high lpm_levels.sleep_disabled=1 coherent_pool=8M earlyprintk=msm_hsl_uart,0x78b0000
 
+# Filesystems
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2675703808
 #Reserve space for data encryption (4399824896-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 4399808512
@@ -66,14 +69,13 @@ TARGET_RECOVERY_FSTAB = device/sony/kanuti/rootdir/fstab.kanuti
 # GFX
 USE_OPENGL_RENDERER := true
 TARGET_USES_ION := true
-TARGET_USES_OVERLAY := true
-TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := true
 
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+BOARD_EGL_CFG := device/sony/kanuti/rootdir/system/lib/egl/egl.cfg
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -123,8 +125,20 @@ ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT ?= true
 endif
 
-BUILD_KERNEL := true
--include vendor/sony/kernel/KernelConfig.mk
+include device/sony/common/BoardConfigCommon.mk
+
+# CM uses QCOM extras
+BOARD_USES_QCOM_HARDWARE := true
+
+# CM Hardware
+BOARD_HARDWARE_CLASS += device/sony/kanuti/cmhw
+
+# Power definitions for Qualcomm solution
+TARGET_POWERHAL_VARIANT := qcom
+CM_POWERHAL_EXTENSION := kanuti
+
+# Lights HAL
+TARGET_PROVIDES_LIBLIGHT := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
