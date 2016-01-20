@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/idc/cyttsp5_mt.idc:system/usr/idc/cyttsp5_mt.idc \
     $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(SONY_ROOT)/system/etc/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(SONY_ROOT)/system/etc/init.kanuti.bt.sh:system/etc/init.kanuti.bt.sh \
     $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config \
     $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf
@@ -35,6 +36,8 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti.rc \
     $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti64_32.rc \
     $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti.rc \
+    $(SONY_ROOT)/init.qcom.sh:root/init.qcom.sh \
+    $(SONY_ROOT)/init.kanuti.sh:root/init.kanuti.sh \
     $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti64_32.rc \
     $(SONY_ROOT)/init.kanuti.usb.rc:root/init.kanuti.usb.rc \
     $(SONY_ROOT)/init.kanuti.pwr.rc:root/init.kanuti.pwr.rc \
@@ -73,53 +76,11 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    $(SONY_ROOT)/system/etc/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
     $(SONY_ROOT)/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
-# Keymaster
-PRODUCT_COPY_FILES += \
-    $(SONY_PREBUILTS)/firmware/keymaster/keymaster.b00:system/vendor/firmware/keymaster/keymaster.b00 \
-    $(SONY_PREBUILTS)/firmware/keymaster/keymaster.b01:system/vendor/firmware/keymaster/keymaster.b01 \
-    $(SONY_PREBUILTS)/firmware/keymaster/keymaster.b02:system/vendor/firmware/keymaster/keymaster.b02 \
-    $(SONY_PREBUILTS)/firmware/keymaster/keymaster.b03:system/vendor/firmware/keymaster/keymaster.b03 \
-    $(SONY_PREBUILTS)/firmware/keymaster/keymaster.mdt:system/vendor/firmware/keymaster/keymaster.mdt 
-
-# Thermal-Engine
-PRODUCT_COPY_FILES += \
-    $(SONY_PREBUILTS)/bin/thermal-engine:system/bin/thermal-engine \
-    $(SONY_PREBUILTS)/etc/thermal-engine-8936.conf:system/etc/thermal-engine-8936.conf \
-    $(SONY_PREBUILTS)/etc/thermal-engine-8939.conf:system/etc/thermal-engine-8939.conf \
-    $(SONY_PREBUILTS)/lib/libthermal_engine.so:system/lib/libthermal_engine.so \
-    $(SONY_PREBUILTS)/lib/libthermal_engine_jni.so:system/lib/libthermal_engine_jni.so \
-    $(SONY_PREBUILTS)/lib64/libthermal_engine.so:system/lib64/libthermal_engine.so \
-    $(SONY_PREBUILTS)/lib64/libthermal_engine_jni.so:system/lib64/libthermal_engine_jni.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libthermalclient.so:system/vendor/lib/libthermalclient.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/libthermalclient.so:system/vendor/lib64/libthermalclient.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/libthermalioctl.so:system/vendor/lib64/libthermalioctl.so 
-
-# DRM
-PRODUCT_COPY_FILES += \
-    $(SONY_PREBUILTS)/bin/qseecomd:system/bin/qseecomd \
-    $(SONY_PROPRIETARY)/vendor/lib/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib/mediadrm/libdrmclearkeyplugin.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib64/mediadrm/libdrmclearkeyplugin.so \
-    $(SONY_PROPRIETARY)/vendor/lib/mediadrm/libmarlincdmplugin.so:system/vendor/lib/mediadrm/libmarlincdmplugin.so \
-    $(SONY_PROPRIETARY)/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libdrmfs.so:system/vendor/lib/libdrmfs.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/libdrmfs.so:system/vendor/lib64/libdrmfs.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libdrmtime.so:system/vendor/lib/libdrmtime.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/libdrmtime.so:system/vendor/lib64/libdrmtime.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libQSEEComAPI.so:system/vendor/lib/libQSEEComAPI.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/libQSEEComAPI.so:system/vendor/lib64/libQSEEComAPI.so \
-    $(SONY_PROPRIETARY)/vendor/lib/librpmb.so:system/vendor/lib/librpmb.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/librpmb.so:system/vendor/lib64/librpmb.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libssd.so:system/vendor/lib/libssd.so \
-    $(SONY_PROPRIETARY)/vendor/lib64/libssd.so:system/vendor/lib64/libssd.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
-    $(SONY_PROPRIETARY)/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -135,27 +96,18 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
     $(SONY_ROOT)/system/usr/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
-
-# Perfd
-PRODUCT_COPY_FILES += \
-    $(SONY_PREBUILTS)/bin/perfd:system/bin/perfd \
-    $(SONY_PREBUILTS)/lib/libqti-perfd-client.so:system/vendor/lib/libqti-perfd-client.so \
-    $(SONY_PREBUILTS)/lib64/libqti-perfd-client.so:system/vendor/lib64/libqti-perfd-client.so 
-
-# QMUXD
-PRODUCT_COPY_FILES += \
-    $(SONY_PREBUILTS)/bin/qmuxd:system/bin/qmuxd \
-    $(SONY_PREBUILTS)/lib/libqomx_core.so:system/lib/libqomx_core.so \
-    $(SONY_PREBUILTS)/lib/librmnetctl.so:system/lib/librmnetctl.so \
-    $(SONY_PREBUILTS)/lib64/librmnetctl.so:system/lib64/librmnetctl.so 
-
 #Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.msm8916 \
     audio.r_submix.default \
     audio.usb.default \
-    libaudio-resampler
+    libaudio-resampler \
+    libacdbloader \
+    libacdbmapper \
+    libaudcal \
+    libaudioalsa \
+    libdiag
 
 # for audio.primary.msm8916
 PRODUCT_PACKAGES += \
@@ -170,6 +122,10 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors \
     libqcompostprocbundle
+
+# Power
+PRODUCT_PACKAGES += \
+    power.kanuti
 
 #GFX
 PRODUCT_PACKAGES += \
@@ -186,15 +142,21 @@ PRODUCT_PACKAGES += \
 #OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
+    libdashplayer \
+    libdivxdrmdecrypt \
     libstagefrighthw \
     libOmxCore \
     libmm-omxcore \
     libOmxVdec \
     libOmxVdecHevc \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libOmxVenc
 
 PRODUCT_PACKAGES += \
-    lights.kanuti
+    lights.msm8916
 
 # NFC packages
 #PRODUCT_PACKAGES += \
@@ -241,9 +203,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep \
-    macaddrsetup
-
-#    thermanager \
+    macaddrsetup 
+    #thermanager
 
 PRODUCT_PACKAGES += \
     rmt_storage
@@ -251,6 +212,10 @@ PRODUCT_PACKAGES += \
 #Charger
 PRODUCT_PACKAGES += \
     charger_res_images
+
+PRODUCT_PACKAGES += \
+    librs_jni \
+    com.android.future.usb.accessory
 
 PRODUCT_PACKAGES += \
     InCallUI \
@@ -281,7 +246,6 @@ $(call add-product-dex-preopt-module-config,services,--compiler-filter=speed)
 # Platform specific default properties
 #
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    persist.data.qmi.adb_logmask=0
+    persist.sys.usb.config=mtp,adb 
 
-$(call inherit-product, vendor/sony/kanuti-common/kanuti-common-vendor-blobs.mk)
+#$(call inherit-product, vendor/sony/kanuti-common/kanuti-common-vendor-blobs.mk)

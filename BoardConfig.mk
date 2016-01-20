@@ -41,7 +41,7 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 
 BOARD_KERNEL_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/kanuti/boot/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/kanuti/boot/mkbootimg.mk
 TARGET_DTB_EXTRA_FLAGS := --force-v2
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
@@ -77,6 +77,9 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 BOARD_EGL_CFG := device/sony/kanuti/rootdir/system/lib/egl/egl.cfg
 
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
@@ -97,6 +100,9 @@ WIFI_DRIVER_FW_PATH_AP  := "ap"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/sony/common/animations
 
 # BT definitions for Qualcomm solution
 BLUETOOTH_HCI_USE_MCT := true
@@ -127,7 +133,11 @@ endif
 
 include device/sony/common/BoardConfigCommon.mk
 
-# CM uses QCOM extras
+# Qualcomm support
+BOARD_USES_QC_TIME_SERVICES := true
+ifneq ($(QCPATH),)
+BOARD_USES_QCNE := true
+endif
 BOARD_USES_QCOM_HARDWARE := true
 
 # CM Hardware

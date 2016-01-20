@@ -1,8 +1,4 @@
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_VENDOR),sony)
-ifeq ($(TARGET_BOARD_PLATFORM),msm8916)
-    include $(call all-subdir-makefiles,$(LOCAL_PATH))
-    include hardware/sony/thermanager/dummy.mk
-endif
-endif
+include $(call all-subdir-makefiles,$(LOCAL_PATH))
+
