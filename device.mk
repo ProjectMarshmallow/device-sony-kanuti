@@ -25,12 +25,18 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.kanuti:root/fstab.kanuti \
     $(SONY_ROOT)/system/usr/idc/cyttsp4_mt.idc:system/usr/idc/cyttsp4_mt.idc \
     $(SONY_ROOT)/system/usr/idc/cyttsp5_mt.idc:system/usr/idc/cyttsp5_mt.idc \
-    $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(SONY_ROOT)/system/etc/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(SONY_ROOT)/system/etc/init.kanuti.bt.sh:system/etc/init.kanuti.bt.sh \
     $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config \
     $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf
+
+# WLAN
+PRODUCT_COPY_FILES += \
+    $(SONY_PREBUILTS)/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
+    $(SONY_PROPRIETARY)/pronto/WCNSS_qcom_wlan_nv.bin:system/lib/modules/pronto/WCNSS_qcom_wlan_nv.bin \
+    $(SONY_ROOT)/system/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(SONY_ROOT)/system/etc/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini 
 
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/init.recovery.kanuti.rc:root/init.recovery.kanuti.rc \
@@ -246,6 +252,7 @@ $(call add-product-dex-preopt-module-config,services,--compiler-filter=speed)
 # Platform specific default properties
 #
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.data.qmi.adb_logmask=0 \
     persist.sys.usb.config=mtp,adb 
 
 #$(call inherit-product, vendor/sony/kanuti-common/kanuti-common-vendor-blobs.mk)
