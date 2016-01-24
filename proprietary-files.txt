@@ -93,19 +93,106 @@ vendor/lib64/lib-rtpsl.so
 vendor/lib64/libmmrtpencoder.so 
 vendor/lib64/libmmrtpencoder.so 
 
+# Chromatix 32
+vendor/lib/libchromatix_imx214_2nd_common.so
+vendor/lib/libchromatix_imx214_2nd_common_snapshot.so
+vendor/lib/libchromatix_imx214_2nd_default_video.so
+vendor/lib/libchromatix_imx214_2nd_hfr_120.so
+vendor/lib/libchromatix_imx214_2nd_hfr_60.so
+vendor/lib/libchromatix_imx214_2nd_hfr_90.so
+vendor/lib/libchromatix_imx214_2nd_liveshot.so
+vendor/lib/libchromatix_imx214_2nd_preview.so
+vendor/lib/libchromatix_imx214_2nd_snapshot.so
+vendor/lib/libchromatix_imx214_2nd_snapshot_hdr.so
+vendor/lib/libchromatix_imx214_2nd_video_hdr.so
+vendor/lib/libchromatix_imx214_common.so
+vendor/lib/libchromatix_imx214_common_snapshot.so
+vendor/lib/libchromatix_imx214_default_video.so
+vendor/lib/libchromatix_imx214_hfr_120fps.so
+vendor/lib/libchromatix_imx214_hfr_60fps.so
+vendor/lib/libchromatix_imx214_hfr_90fps.so
+vendor/lib/libchromatix_imx214_liveshot.so
+vendor/lib/libchromatix_imx214_preview.so
+vendor/lib/libchromatix_imx214_snapshot.so
+vendor/lib/libchromatix_imx214_snapshot_hdr.so
+vendor/lib/libchromatix_imx214_video_hdr.so
+vendor/lib/libchromatix_ov5648_f_2nd_common.so
+vendor/lib/libchromatix_ov5648_f_2nd_common_snapshot.so
+vendor/lib/libchromatix_ov5648_f_2nd_default_video.so
+vendor/lib/libchromatix_ov5648_f_2nd_default_video_hd.so
+vendor/lib/libchromatix_ov5648_f_2nd_preview.so
+vendor/lib/libchromatix_ov5648_f_2nd_snapshot.so
+vendor/lib/libchromatix_ov5648_f_2nd_zsl.so
+vendor/lib/libchromatix_ov5648_f_common.so
+vendor/lib/libchromatix_ov5648_f_common_snapshot.so
+vendor/lib/libchromatix_ov5648_f_default_video.so
+vendor/lib/libchromatix_ov5648_f_default_video_hd.so
+vendor/lib/libchromatix_ov5648_f_preview.so
+vendor/lib/libchromatix_ov5648_f_snapshot.so
+vendor/lib/libchromatix_ov5648_f_zsl.so
+
+# Chromatix 64
+vendor/lib64/libchromatix_imx214_snapshot_hdr.so
+
+# Camera
+bin/mm-qcamera-daemon
+vendor/lib/libjpegdhw.so
+vendor/lib/libjpegehw.so   
+vendor/lib/libmmcamera2_c2d_module.so
+vendor/lib/libmmcamera2_cpp_module.so
+vendor/lib/libmmcamera2_frame_algorithm.so
+vendor/lib/libmmcamera2_iface_modules.so
+vendor/lib/libmmcamera2_imglib_modules.so
+vendor/lib/libmmcamera2_is.so
+vendor/lib/libmmcamera2_isp_modules.so
+vendor/lib/libmmcamera2_pproc_modules.so
+vendor/lib/libmmcamera2_sensor_modules.so
+vendor/lib/libmmcamera2_stats_algorithm.so
+vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libmmcamera2_vpe_module.so
+vendor/lib/libmmcamera2_wnr_module.so
+vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_gt24c16_eeprom.so
+vendor/lib/libmmcamera_hdr_gb_lib.so
+vendor/lib/libmmcamera_hdr_lib.so
+vendor/lib/libmmcamera_hi256.so
+vendor/lib/libmmcamera_imglib.so
+vendor/lib/libmmcamera_imx214.so
+vendor/lib/libmmcamera_imx214_2nd.so
+vendor/lib/libmmcamera_isp_arcsoft.so
+vendor/lib/libmmcamera_ov5648_f.so
+vendor/lib/libmmcamera_ov5648_f_2nd.so
+vendor/lib/libmmcamera_tintless_algo.so
+vendor/lib/libmmcamera_tintless_bg_pca_algo.so
+vendor/lib/libmmcamera_tuning.so
+vendor/lib/libmmcamera_wavelet_lib.so
+vendor/lib/libmmipl.so
+vendor/lib/libmmjpeg.so
+vendor/lib/libmmqjpeg_codec.so
+vendor/lib/liboemcamera.so
+vendor/lib/libqomx_jpegdec.so
+vendor/lib/libqomx_jpegenc.so  
+
+# Camera Autofocus
+vendor/lib/libactuator_dw9714_f.so
+vendor/lib/libactuator_dw9714_f2.so
+vendor/lib/libactuator_dw9714_f2_camcorder.so
+vendor/lib/libactuator_dw9714_f2_camera.so
+vendor/lib/libactuator_dw9714_f_camcorder.so
+vendor/lib/libactuator_dw9714_f_camera.so
+
+# Camera Firmware
+etc/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw
+
 # Bins
 bin/irsc_util
 bin/rfs_access
 bin/rmt_storage
 bin/ta_qmi_service
-bin/mm-qcamera-daemon
 bin/netmgrd
-
-# TA
-lib/libta.so
-lib/libmiscta.so
-lib64/libta.so
-lib64/libmiscta.so
 
 # DRM
 bin/qseecomd 

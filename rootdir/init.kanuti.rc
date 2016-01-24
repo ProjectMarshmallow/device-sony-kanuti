@@ -251,14 +251,23 @@ on boot
     # Enable DEBUG_SUSPEND, DEBUG_EXIT_SUSPEND, and DEBUG_WAKEUP
     write /sys/module/wakelock/parameters/debug_mask 7
 
-    #   Define TCP buffer sizes for various networks
-    #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
-    setprop net.tcp.buffersize.wifi    524288,2097152,4194304,262144,524288,1048576
+#   Define TCP buffer sizes for various networks
+#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 4096,87380,524288,4096,16384,110208
+    setprop net.tcp.buffersize.lte     2097152,4194304,8388608,2097152,4194304,8388608
+    setprop net.tcp.buffersize.umts    4094,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.hspa    2097152,4194304,8388608,2097152,4194304,8388608
+    setprop net.tcp.buffersize.hsupa   2097152,4194304,8388608,2097152,4194304,8388608
+    setprop net.tcp.buffersize.hsdpa   2097152,4194304,8388608,2097152,4194304,8388608
+    setprop net.tcp.buffersize.hspap   2097152,4194304,8388608,2097152,4194304,8388608
+    setprop net.tcp.buffersize.edge    4093,94880,129920,4096,55296,129920
+    setprop net.tcp.buffersize.gprs    4093,94880,129920,4096,55296,129920
+    setprop net.tcp.buffersize.evdo    4094,87380,524288,4096,16384,262144
 
-    #   Assign TCP buffer thresholds to be ceiling value of technology maximums
-    #   Increased technology maximums should be reflected here.
-    write /proc/sys/net/core/rmem_max  2097152
-    write /proc/sys/net/core/wmem_max  2097152
+#   Assign TCP buffer thresholds to be ceiling value of technology maximums
+#   Increased technology maximums should be reflected here.
+    write /proc/sys/net/core/rmem_max  8388608
+    write /proc/sys/net/core/wmem_max  8388608
 
     #To allow interfaces to get v6 address when tethering is enabled
     write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
@@ -359,8 +368,8 @@ service sct_service /system/vendor/bin/sct_service
     user root
     class main
 
-#Camera
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+#start camera server as daemon
+service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
