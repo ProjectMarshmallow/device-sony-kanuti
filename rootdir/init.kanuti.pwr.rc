@@ -49,6 +49,16 @@ on charger
 
 on boot
 
+    # HMP scheduler load tracking settings
+    write /proc/sys/kernel/sched_ravg_hist_size 5
+
+    # HMP Task packing settings for 8939
+    write /proc/sys/kernel/sched_small_task 30
+    write /proc/sys/kernel/sched_upmigrate_min_nice 9
+    write /proc/sys/kernel/sched_init_task_load 30
+    write /proc/sys/kernel/sched_mostly_idle_load 30
+    write /proc/sys/kernel/sched_mostly_idle_nr_run 3
+ 
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1

@@ -13,7 +13,6 @@
 # limitations under the License.
 
 import init.kanuti.usb.rc
-import init.kanuti.pwr.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -398,6 +397,15 @@ service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-w
     class main
     user root
     oneshot
+
+service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    start qcom-post-boot
 
 service perfd /system/bin/perfd
    class main

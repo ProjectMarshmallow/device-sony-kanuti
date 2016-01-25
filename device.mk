@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/init.kanuti.sh:root/init.kanuti.sh \
     $(SONY_ROOT)/init.kanuti.rc:root/init.kanuti64_32.rc \
     $(SONY_ROOT)/init.kanuti.usb.rc:root/init.kanuti.usb.rc \
-    $(SONY_ROOT)/init.kanuti.pwr.rc:root/init.kanuti.pwr.rc \
+    $(SONY_ROOT)/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti.rc \
     $(SONY_ROOT)/ueventd.kanuti.rc:root/ueventd.kanuti64_32.rc
 
