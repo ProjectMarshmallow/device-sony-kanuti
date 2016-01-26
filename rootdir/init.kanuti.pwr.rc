@@ -86,7 +86,7 @@ on property:init.svc.bootanim=stopped
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
     write /dev/cpuctl/cpu.notify_on_migrate 1
 
-    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+    #write /sys/module/lpm_levels/parameters/sleep_disabled 0
     write /sys/class/net/rmnet0/queues/rx-0/rps_cpus 10
 
     # HMP scheduler settings for 8916, 8936, 8939
