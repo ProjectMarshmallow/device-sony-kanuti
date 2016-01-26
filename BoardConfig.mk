@@ -55,6 +55,7 @@ BOARD_KERNEL_CMDLINE +=androidboot.selinux=permissive dwc3.maximum_speed=high lp
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2675703808
 #Reserve space for data encryption (4399824896-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 4399808512
@@ -123,8 +124,8 @@ ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT ?= true
 endif
 
-BUILD_KERNEL := true
--include vendor/sony/kernel/KernelConfig.mk
+TARGET_POWERHAL_VARIANT := qcom
+TARGET_PROVIDES_LIBLIGHT := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -149,3 +150,4 @@ BOARD_SEPOLICY_UNION += \
     property_contexts \
     service_contexts
 
+include device/sony/common/BoardConfigCommon.mk
