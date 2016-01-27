@@ -387,7 +387,7 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
 
-service sensord /system/vendor/bin/sensord
+service sensord /system/bin/sensord
     class main
     user system
     group system
@@ -404,7 +404,7 @@ service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-w
     user root
     oneshot
 
-service wcnss_service /system/vendor/bin/wcnss_service
+service wcnss_service /system/bin/wcnss_service
     class main
     user system
     group system wifi radio
