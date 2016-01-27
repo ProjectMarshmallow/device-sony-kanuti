@@ -13,8 +13,14 @@
 # limitations under the License.
 
 LOCAL_PATH:= $(call my-dir)
+LIGHT_MOD := true
+
 include $(CLEAR_VARS)
+ifeq ($(LIGHT_MOD), true)
+LOCAL_SRC_FILES := lights_mod.c
+else
 LOCAL_SRC_FILES := lights.c
+endif
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE := lights.kanuti
 LOCAL_MODULE_TAGS := optional
