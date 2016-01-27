@@ -75,10 +75,6 @@ on boot
     chmod 664 /sys/devices/system/cpu/cpu5/online
     chmod 664 /sys/devices/system/cpu/cpu6/online
     chmod 664 /sys/devices/system/cpu/cpu7/online
-    write /sys/devices/system/cpu/cpu4/online 0
-    write /sys/devices/system/cpu/cpu5/online 0
-    write /sys/devices/system/cpu/cpu6/online 0
-    write /sys/devices/system/cpu/cpu7/online 0
     write /sys/module/msm_thermal/core_control/enabled 1
 
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
@@ -144,3 +140,6 @@ on boot
     write /sys/devices/system/cpu/cpu6/sched_mostly_idle_load 30
     write /sys/devices/system/cpu/cpu7/sched_mostly_idle_load 30
 
+    setprop ro.min_freq_0 800000
+    setprop ro.min_freq_4 499200
+    start perfd
