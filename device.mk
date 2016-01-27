@@ -96,7 +96,12 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8916 \
     audio.r_submix.default \
     audio.usb.default \
-    libaudio-resampler
+    libaudio-resampler \
+    libacdbloader \
+    libacdbmapper \
+    libaudcal \
+    libaudioalsa \
+    libdiag
 
 # for audio.primary.msm8916
 PRODUCT_PACKAGES += \
@@ -127,11 +132,17 @@ PRODUCT_PACKAGES += \
 #OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
+    libdashplayer \
+    libdivxdrmdecrypt \
     libstagefrighthw \
     libOmxCore \
     libmm-omxcore \
     libOmxVdec \
     libOmxVdecHevc \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libOmxVenc
 
 PRODUCT_PACKAGES += \

@@ -33,8 +33,8 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RECOVERY := false
 TARGET_NO_KERNEL := false
 
-TARGET_KERNEL_SOURCE := kernel/sony/kernel-aosp
-TARGET_KERNEL_CONFIG := aosp_kanuti_tulip_defconfig
+TARGET_KERNEL_SOURCE := kernel/sony/kernel-copyleft
+TARGET_KERNEL_CONFIG := proj_fxn_user_defconfig
 TARGET_USES_64_BIT_BINDER := true
 
 BOARD_KERNEL_BASE        := 0x80000000
