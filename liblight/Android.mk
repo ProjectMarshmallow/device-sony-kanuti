@@ -13,17 +13,15 @@
 # limitations under the License.
 
 LOCAL_PATH:= $(call my-dir)
-LIGHT_MOD := true
-
+# HAL module implemenation stored in
+# hw/<COPYPIX_HARDWARE_MODULE_ID>.<ro.board.platform>.so
 include $(CLEAR_VARS)
-ifeq ($(LIGHT_MOD), true)
-LOCAL_SRC_FILES := lights_mod.c
-else
-LOCAL_SRC_FILES := lights.c
-endif
-LOCAL_SHARED_LIBRARIES := liblog
-LOCAL_MODULE := lights.kanuti
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_RELATIVE_PATH := hw
-include $(BUILD_SHARED_LIBRARY)
 
+LOCAL_SRC_FILES := lights.c
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_CFLAGS := $(common_flags) -DLOG_TAG=\"qdlights\"
+LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)

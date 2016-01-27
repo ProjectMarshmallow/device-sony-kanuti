@@ -71,6 +71,7 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    $(SONY_ROOT)/system/etc/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
     $(SONY_ROOT)/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
@@ -146,7 +147,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc
 
 PRODUCT_PACKAGES += \
-    lights.kanuti
+    lights.msm8916
 
 # NFC packages
 #PRODUCT_PACKAGES += \
