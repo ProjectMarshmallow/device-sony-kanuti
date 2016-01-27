@@ -128,6 +128,10 @@ EXTENDED_FONT_FOOTPRINT := true
 ifeq ($(HOST_OS),linux)
     WITH_DEXPREOPT ?= true
 endif
+BOARD_USES_QCOM_HARDWARE := true
+
+# CM Hardware
+BOARD_HARDWARE_CLASS += device/sony/kanuti/cmhw
 
 TARGET_POWERHAL_VARIANT := qcom
 TARGET_PROVIDES_LIBLIGHT := true

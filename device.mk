@@ -179,7 +179,8 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmmjpeg_interface \
     libqomx_core \
-    camera.msm8916
+    camera.msm8916 \
+    Camera2
 
 PRODUCT_PACKAGES += \
     keystore.msm8916
