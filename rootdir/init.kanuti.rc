@@ -25,7 +25,7 @@ on boot
     #WCNSS enable
     write /dev/wcnss_wlan 1
 
-service sensord /system/vendor/bin/sensord
+service sensord /system/bin/sensord
     class main
     user system
     group system
