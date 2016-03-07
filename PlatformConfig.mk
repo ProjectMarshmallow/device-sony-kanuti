@@ -26,6 +26,8 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a9
 
+# Kernel properties
+TARGET_KERNEL_CONFIG := proj_fxn_defconfig
 TARGET_KERNEL_SOURCE := kernel/sony/kernel-copyleft
 TARGET_USES_64_BIT_BINDER := true
 
