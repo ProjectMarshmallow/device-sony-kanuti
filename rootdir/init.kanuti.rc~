@@ -16,13 +16,6 @@ import init.common.rc
 import init.common.usb.rc
 import init.kanuti.pwr.rc
 
-on init
-    # enable subsystem restart
-    write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
-    write /sys/bus/msm_subsys/devices/subsys0/restart_level "RELATED"
-    write /sys/bus/msm_subsys/devices/subsys1/restart_level "RELATED"
-    write /sys/bus/msm_subsys/devices/subsys2/restart_level "RELATED"
-
 on fs
     mount_all ./fstab.kanuti
     restorecon_recursive /persist
@@ -31,6 +24,18 @@ on fs
 on boot
     #WCNSS enable
     write /dev/wcnss_wlan 1
+
+#SONY misc
+service tad_static /system/vendor/bin/tad_static /dev/block/platform/soc.0/by-name/TA 0,16
+    user root
+    group root
+    socket tad stream 0660 system system
+    class core
+
+#SONY misc
+service ta_qmi_service /system/vendor/bin/ta_qmi_service
+    class main
+    user root
 
 service sensord /system/vendor/bin/sensord
     class main
