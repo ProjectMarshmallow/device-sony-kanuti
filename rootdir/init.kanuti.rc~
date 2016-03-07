@@ -32,18 +32,6 @@ on boot
     #WCNSS enable
     write /dev/wcnss_wlan 1
 
-#SONY misc
-service tad_static /system/vendor/bin/tad_static /dev/block/platform/soc.0/by-name/TA 0,16
-    user root
-    group root
-    socket tad stream 0660 system system
-    class core
-
-#SONY misc
-service ta_qmi_service /system/vendor/bin/ta_qmi_service
-    class main
-    user root
-
 service sensord /system/vendor/bin/sensord
     class main
     user system
