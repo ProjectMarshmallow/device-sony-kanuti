@@ -36,7 +36,8 @@ PRODUCT_COPY_FILES += \
 
 # Qualcom BT
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
+    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
+    $(SONY_ROOT)/system/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh 
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -56,8 +57,7 @@ PRODUCT_COPY_FILES += \
 
 # Platform Init
 PRODUCT_PACKAGES += \
-    fstab.kanuti \
-    init.kanuti.pwr
+    fstab.kanuti 
 
 # NFC packages
 PRODUCT_PACKAGES += \
