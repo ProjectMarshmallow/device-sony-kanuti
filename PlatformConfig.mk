@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+AOSP_KERNEL := true
 TARGET_BOARD_PLATFORM := msm8916
 
 TARGET_ARCH := arm64
@@ -27,8 +28,13 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a9
 
 # Kernel properties
+ifeq ($(AOSP_KERNEL), false)
+TARGET_KERNEL_CONFIG := aosp_kanuti_tulip_defconfig
+TARGET_KERNEL_SOURCE := kernel/sony/kernel-aosp
+else
 TARGET_KERNEL_CONFIG := proj_fxn_defconfig
 TARGET_KERNEL_SOURCE := kernel/sony/kernel-copyleft
+endif
 TARGET_USES_64_BIT_BINDER := true
 
 BOARD_KERNEL_BASE        := 0x80000000
@@ -58,6 +64,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 TARGET_RECOVERY_FSTAB = device/sony/kanuti/rootdir/fstab.kanuti
+TARGET_SYSTEM_PROP := device/sony/kanuti/system.prop
 
 # Wi-Fi definitions for Qualcomm solution
 BOARD_HAS_QCOM_WLAN := true
