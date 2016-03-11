@@ -36,6 +36,10 @@ vendor/etc/msm_irqbalance.conf
 # Battery
 bin/vm_bms
 
+# SCD 
+bin/scd
+bin/scdnotifier
+
 # Thermal
 bin/thermal-engine 
 etc/thermal-engine-8936.conf 
