@@ -7,7 +7,7 @@ FP=$(cd ${0%/*} && pwd -P)
 export VENDOR=$(basename $(dirname $FP))
 export DEVICE=$(basename $FP)
 export BOARDCONFIGVENDOR=false
-export BOARD_VENDOR_PLATFORM=kanutis
+export BOARD_VENDOR_PLATFORM=kanuti
 export TARGET_BOARD_PLATFORM=msm8916
 
 ../sony_common/extract-files.sh $@
