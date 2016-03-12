@@ -143,3 +143,8 @@ on property:bluetooth.hciattach=true
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
 
+service time_daemon /system/bin/time_daemon
+   class late_start
+   user root
+   group root
+
