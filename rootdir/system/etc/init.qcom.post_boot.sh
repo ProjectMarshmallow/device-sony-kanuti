@@ -364,7 +364,6 @@ case "$target" in
 	        echo 1 > /sys/devices/system/cpu/cpu3/online
 	    ;;
            "239" | "241" | "263")
-		echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 		echo 10 > /sys/class/net/rmnet0/queues/rx-0/rps_cpus
             ;;
              "233" | "240" | "242")

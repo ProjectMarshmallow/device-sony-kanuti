@@ -199,9 +199,12 @@ etc/firmware/cpp_firmware_v1_4_0.fw
 # Bins
 bin/irsc_util
 bin/rfs_access
-bin/rmt_storage
 bin/ta_qmi_service
+
+# Modem
 bin/netmgrd
+bin/rmt_storage
+lib/libpin-cache.so
 
 # DRM
 bin/qseecomd 
