@@ -91,6 +91,10 @@
 /dev/rfkill                                 0660 bluetooth net_bt_stack
 /dev/ttyHSL0                                0660 bluetooth net_bt_stack
 
+# vm_bms
+/dev/vm_bms               0660   system     system
+/dev/battery_data         0660   system     system
+
 # WLAN
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system

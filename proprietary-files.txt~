@@ -205,7 +205,6 @@ bin/ta_qmi_service
 bin/netmgrd
 bin/rmt_storage
 lib/libpin-cache.so
-lib64/libpin-cache.so
 
 # DRM
 bin/qseecomd 
