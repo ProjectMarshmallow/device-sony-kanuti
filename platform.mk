@@ -153,6 +153,11 @@ PRODUCT_PACKAGES += \
 	libpn547_fw \
 	libbtnv
 
+# RIL
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
+    libxml2
+
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
