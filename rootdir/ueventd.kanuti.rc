@@ -21,9 +21,6 @@
 /dev/smdcntl6             0640   radio      radio
 /dev/smdcntl7             0640   radio      radio
 /dev/smdcntl8             0640   radio      radio
-/dev/smdcntl9             0640   radio      radio
-/dev/smdcntl10            0640   radio      radio
-/dev/smdcntl11            0640   radio      radio
 /dev/smdcnt_rev0          0640   radio      radio
 /dev/smdcnt_rev1          0640   radio      radio
 /dev/smdcnt_rev2          0640   radio      radio
@@ -34,7 +31,36 @@
 /dev/smdcnt_rev7          0640   radio      radio
 /dev/smdcnt_rev8          0640   radio      radio
 /dev/smuxctl32            0640   radio      radio
+/dev/sdioctl0             0640   radio      radio
+/dev/sdioctl1             0640   radio      radio
+/dev/sdioctl2             0640   radio      radio
+/dev/sdioctl3             0640   radio      radio
+/dev/sdioctl4             0640   radio      radio
+/dev/sdioctl5             0640   radio      radio
+/dev/sdioctl6             0640   radio      radio
+/dev/sdioctl7             0640   radio      radio
+/dev/sdioctl8             0640   radio      radio
 /dev/rmnet_mux_ctrl       0640   radio      radio
+/dev/hsicctl0             0640   radio      radio
+/dev/hsicctl1             0640   radio      radio
+/dev/hsicctl2             0640   radio      radio
+/dev/hsicctl3             0640   radio      radio
+/dev/hsicctl4             0640   radio      radio
+/dev/hsicctl5             0640   radio      radio
+/dev/hsicctl6             0640   radio      radio
+/dev/hsicctl7             0640   radio      radio
+/dev/hsicctl8             0640   radio      radio
+/dev/hsicctl9             0640   radio      radio
+/dev/hsicctl10            0640   radio      radio
+/dev/hsicctl11            0640   radio      radio
+/dev/hsicctl12            0640   radio      radio
+/dev/hsicctl13            0640   radio      radio
+/dev/hsicctl14            0640   radio      radio
+/dev/hsicctl15            0640   radio      radio
+/dev/hsicctl16            0640   radio      radio
+/dev/mhi_pipe_14          0640   radio      radio
+/dev/mhi_pipe_16          0640   radio      radio
+/dev/mhi_pipe_32          0640   radio      radioS
 /dev/video*               0660   system     camera
 /dev/media*               0660   system     camera
 /dev/v4l-subdev*          0660   system     camera
@@ -124,64 +150,6 @@
 /sys/devices/virtual/graphics/fb2/ad                  0664 system graphics
 
 # Sensors
-/sys/devices/virtual/input/input* enable                   0660  root   input
-/sys/devices/virtual/input/input* poll_delay               0660  root   input
-/sys/devices/virtual/input/input* range                    0664  system   system
-/sys/devices/virtual/input/input* bandwidth                0664  system   system
-/sys/devices/virtual/input/input* op_mode                  0664  system   system
-/sys/devices/virtual/input/input* delay                    0664  system   system
-/sys/devices/virtual/input/input* SleepDur                 0664  system   system
-/sys/devices/virtual/input/input* fast_calibration_x       0664  system   system
-/sys/devices/virtual/input/input* fast_calibration_y       0664  system   system
-/sys/devices/virtual/input/input* fast_calibration_z       0664  system   system
-/sys/devices/virtual/input/input* fifo_mode                0664  system   system
-/sys/devices/virtual/input/input* fifo_trig                0664  system   system
-/sys/devices/virtual/input/input* fifo_trig_src            0664  system   system
-/sys/devices/virtual/input/input* fifo_framecount          0664  system   system
-/sys/devices/virtual/input/input* fifo_data_sel            0664  system   system
-/sys/devices/virtual/input/input* reg                      0664  system   system
-/sys/devices/virtual/input/input* offset_x                 0664  system   system
-/sys/devices/virtual/input/input* offset_y                 0664  system   system
-/sys/devices/virtual/input/input* offset_z                 0664  system   system
-/sys/devices/virtual/input/input* enable_int               0664  system   system
-/sys/devices/virtual/input/input* int_mode                 0664  system   system
-/sys/devices/virtual/input/input* slope_duration           0664  system   system
-/sys/devices/virtual/input/input* slope_threshold          0664  system   system
-/sys/devices/virtual/input/input* slope_no_mot_duration    0664  system   system
-/sys/devices/virtual/input/input* slope_no_mot_threshold   0664  system   system
-/sys/devices/virtual/input/input* high_g_duration          0664  system   system
-/sys/devices/virtual/input/input* high_g_threshold         0664  system   system
-/sys/devices/virtual/input/input* low_g_duration           0664  system   system
-/sys/devices/virtual/input/input* low_g_threshold          0664  system   system
-/sys/devices/virtual/input/input* tap_duration             0664  system   system
-/sys/devices/virtual/input/input* tap_threshold            0664  system   system
-/sys/devices/virtual/input/input* tap_quiet                0664  system   system
-/sys/devices/virtual/input/input* tap_shock                0664  system   system
-/sys/devices/virtual/input/input* tap_samp                 0664  system   system
-/sys/devices/virtual/input/input* orient_mode              0664  system   system
-/sys/devices/virtual/input/input* orient_blocking          0664  system   system
-/sys/devices/virtual/input/input* orient_hyst              0664  system   system
-/sys/devices/virtual/input/input* orient_theta             0664  system   system
-/sys/devices/virtual/input/input* flat_theta               0664  system   system
-/sys/devices/virtual/input/input* flat_hold_time           0664  system   system
-/sys/devices/virtual/input/input* selftest                 0664  system   system
-/sys/devices/virtual/input/input* softreset                0664  system   system
-/sys/devices/virtual/input/input* en_sig_motion            0664  system   system
-/sys/devices/virtual/input/input* tap_time_period          0664  system   system
-/sys/devices/virtual/input/input* en_double_tap            0664  system   system
-/sys/devices/virtual/input/input* fastoffset_en            0664  system   system
-/sys/devices/virtual/input/input* slowoffset_en            0664  system   system
-/sys/devices/virtual/input/input* sleepdur                 0664  system   system
-/sys/devices/virtual/input/input* autosleepdur             0664  system   system
-/sys/devices/virtual/input/input* fifo_tag                 0664  system   system
-/sys/devices/virtual/input/input* interrupt                0664  system   system
-/sys/devices/virtual/input/input* dbg                      0664  system   system
-/sys/devices/virtual/input/input* odr                      0664  system   system
-/sys/devices/virtual/input/input* rept_xy                  0664  system   system
-/sys/devices/virtual/input/input* rept_z                   0664  system   system
-/sys/devices/virtual/input/input* test                     0664  system   system
-
-# sensors
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 enable         0660    input    system
 /sys/devices/f9925000.i2c/i2c-0/0-*                 poll_delay     0660    input    system
