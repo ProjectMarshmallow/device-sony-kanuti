@@ -100,6 +100,59 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
 
+# Prebuilts
+PRODUCT_PACKAGES += \
+	Bluetooth_cal \
+	General_cal \
+	Global_cal \
+	Hdmi_cal \
+	Headset_cal \
+	cmnlib_b00 \
+	cmnlib_b01 \
+	cmnlib_b02 \
+	cmnlib_b03 \
+	cmnlib_mdt \
+	ice40 \
+	tzhdcp_b00 \
+	tzhdcp_b01 \
+	tzhdcp_b02 \
+	tzhdcp_b03 \
+	tzhdcp_mdt \
+	tzlibasb_b00 \
+	tzlibasb_b01 \
+	tzlibasb_b02 \
+	tzlibasb_b03 \
+	tzlibasb_mdt \
+	tznautilus_b00 \
+	tznautilus_b01 \
+	tznautilus_b02 \
+	tznautilus_b03 \
+	tznautilus_mdt \
+	tzsuntory_b00 \
+	tzsuntory_b01 \
+	tzsuntory_b02 \
+	tzsuntory_b03 \
+	tzsuntory_mdt \
+	tzwidevine_b00 \
+	tzwidevine_b01 \
+	tzwidevine_b02 \
+	tzwidevine_b03 \
+	tzwidevine_mdt \
+	venus_b00 \
+	venus_b01 \
+	venus_b02 \
+	venus_b03 \
+	venus_b04 \
+	venus_mbn \
+	venus_mdt \
+	WCNSS_cfg \
+	WCNSS_qcom_cfg \
+	WCNSS_qcom_wlan_nv \
+	hci_qcomm_init \
+	wcnss_service \
+	libpn547_fw \
+	libbtnv
+
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
