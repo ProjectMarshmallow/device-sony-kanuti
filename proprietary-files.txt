@@ -7,6 +7,9 @@ vendor/lib64/libSubSystemShutdown.so
 vendor/lib64/libsubsystem_control.so
 vendor/lib64/libsystem_health_mon.so
 
+# Post-Processing SurfaceFlinger
+bin/mm-pp-daemon
+
 # DashPlayer
 lib/libdashplayer.so 
 lib64/libdashplayer.so 
