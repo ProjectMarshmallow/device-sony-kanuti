@@ -18,6 +18,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 SOMC_PLATFORM := kanuti
 
 SONY_ROOT := device/sony/kanuti/rootdir
+SONY_PROPRIETARY := device/sony/kanuti/proprietary
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -28,6 +29,10 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(SONY_ROOT)/system/etc/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
     $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml
+
+# Charger
+PRODUCT_COPY_FILES += \
+    $(SONY_PROPRIETARY)/bin/charger:root/sbin/charger
 
 # Qualcom WiFi
 PRODUCT_COPY_FILES += \
