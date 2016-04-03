@@ -230,6 +230,8 @@ lib64/libpin-cache.so
 
 # DRM
 bin/qseecomd 
+etc/permissions/com.google.widevine.software.drm.xml 
+framework/com.google.widevine.software.drm.jar 
 vendor/lib/mediadrm/libdrmclearkeyplugin.so 
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so 
 vendor/lib/mediadrm/libmarlincdmplugin.so 
@@ -248,6 +250,11 @@ vendor/lib64/libssd.so
 vendor/lib/libwvdrm_L1.so 
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so 
+
+# Configs
+etc/data/dsi_config.xml
+etc/data/netmgr_config.xml
+etc/data/qmi_config.xml
 
 # Others script
 #etc/init.ath3k.bt.sh          
