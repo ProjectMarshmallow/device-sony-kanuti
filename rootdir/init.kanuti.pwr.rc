@@ -14,11 +14,20 @@
 
 on enable-low-power
 
+    write /sys/class/net/rmnet0/queues/rx-0/rps_cpus 10
+
+    # HMP scheduler load tracking settings
+    write /proc/sys/kernel/sched_window_stats_policy 3
+    write /proc/sys/kernel/sched_ravg_hist_size 5
+
+    # HMP Task packing settings for 8939, 8929
+    write /proc/sys/kernel/sched_small_task 30
+
     write /sys/class/devfreq/qcom,cpubw.61/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,cpubw.61/bw_hwmon/io_percent 20
     write /sys/class/devfreq/qcom,gpubw.38/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,gpubw.38/bw_hwmon/io_percent 40
-    write /sys/class/devfreq/qcom,mincpubw.65/governor "cpufreq"
+    write /sys/class/devfreq/qcom,cci.60/governor "cpufreq"
 
     # disable thermal core_control to update interactive gov settings
     write /sys/module/msm_thermal/core_control/enabled 0

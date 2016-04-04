@@ -278,3 +278,7 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 
+# UICC
+bin/usb_uicc_client
+etc/init.qcom.uicc.sh
+
