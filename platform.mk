@@ -41,8 +41,7 @@ PRODUCT_COPY_FILES += \
 
 # Qualcom BT
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
-    $(SONY_ROOT)/system/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh 
+    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh 
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -60,9 +59,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
+# Configs
+PRODUCT_COPY_FILES += \
+    $(SONY_PROPRIETARY)/etc/data/dsi_config.xml:system/etc/data/dsi_config.xml \
+    $(SONY_PROPRIETARY)/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
+    $(SONY_PROPRIETARY)/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml 
+
 # Platform Init
 PRODUCT_PACKAGES += \
-    fstab.kanuti 
+    fstab.kanuti \
+    init.kanuti.pwr
 
 # NFC packages
 PRODUCT_PACKAGES += \

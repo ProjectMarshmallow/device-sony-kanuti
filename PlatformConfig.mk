@@ -94,7 +94,7 @@ BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_HEALTHD_CUSTOM_CHARGER_RES :=device/sony/kanuti/res/images/charger
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/sony/kanuti/res/images/charger
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/kanuti/sepolicy

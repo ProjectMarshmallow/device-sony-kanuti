@@ -251,11 +251,6 @@ vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so 
 
-# Configs
-etc/data/dsi_config.xml
-etc/data/netmgr_config.xml
-etc/data/qmi_config.xml
-
 # Others script
 #etc/init.ath3k.bt.sh          
 #etc/init.qcom.coex.sh         
