@@ -109,7 +109,7 @@
 /dev/video32              0660   system     camera
 /dev/video33              0660   system     camera
 /dev/lightsensor          0660   system     system
-/dev/proximity            0666   system     system
+/dev/proximity            0600   system     system
 
 /sys/devices/virtual/smdpkt/smdcntl* open_timeout 0664 radio  radio
 
@@ -181,10 +181,6 @@
 /sys/devices/virtual/input/input*                   poll           0660    input    system
 /sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
 
-# Light and Proximity Sensors
-/sys/devices/virtual/capella_sensors/proximity      ps_adc         0660    input    system
-/sys/devices/virtual/capella_sensors/lightsensor    ls_auto        0660    input    system
-
 # Sensors
 /sys/devices/virtual/input/input* enable                   0660  root   input
 /sys/devices/virtual/input/input* poll_delay               0660  root   input
@@ -242,3 +238,14 @@
 /sys/devices/virtual/input/input* rept_xy                  0664  system   system
 /sys/devices/virtual/input/input* rept_z                   0664  system   system
 /sys/devices/virtual/input/input* test                     0664  system   system
+
+# UIO devices
+/dev/uio0		0660 system system
+/dev/uio1		0660 system system
+/dev/uio2		0660 system system
+
+# Proximity Sensor
+/sys/devices/virtual/capella_sensors/proximity      ps_adc    0644 system system
+/sys/devices/virtual/capella_sensors/proximity      ps_conf   0644 system system
+/sys/devices/virtual/capella_sensors/proximity      ps_thd    0644 system system
+/sys/devices/virtual/capella_sensors/lightsensor    ls_ir_ink 0644 system system
