@@ -1,36 +1,7 @@
-# Qualcomm System Daemon
-bin/qcom-system-daemon
-vendor/lib/libSubSystemShutdown.so
-vendor/lib/libsubsystem_control.so
-vendor/lib/libsystem_health_mon.so
-vendor/lib64/libSubSystemShutdown.so
-vendor/lib64/libsubsystem_control.so
-vendor/lib64/libsystem_health_mon.so
-
-# Post-Processing SurfaceFlinger
-bin/mm-pp-daemon
-
-# DashPlayer
-lib/libdashplayer.so 
-lib64/libdashplayer.so 
-
 # Perfd
 bin/perfd
 vendor/lib/libqti-perfd-client.so 
 vendor/lib64/libqti-perfd-client.so
-
-# Keymaster
-vendor/firmware/keymaster/keymaster.b00
-vendor/firmware/keymaster/keymaster.b01
-vendor/firmware/keymaster/keymaster.b02
-vendor/firmware/keymaster/keymaster.b03
-vendor/firmware/keymaster/keymaster.mdt
-
-# QMUXD
-bin/qmuxd
-lib/libqomx_core.so
-lib/librmnetctl.so
-lib64/librmnetctl.so 
 
 # IrqBalance
 bin/msm_irqbalance
@@ -38,10 +9,6 @@ vendor/etc/msm_irqbalance.conf
 
 # Battery
 bin/vm_bms
-
-# SCD 
-bin/scd
-bin/scdnotifier
 
 # Thermal
 bin/thermal-engine 
@@ -54,92 +21,6 @@ lib64/libthermal_engine_jni.so
 vendor/lib/libthermalclient.so 
 vendor/lib64/libthermalclient.so 
 vendor/lib64/libthermalioctl.so 
-
-# IMS Libs
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/ims_rtp_daemon
-vendor/lib/lib-dplmedia.so 
-vendor/lib/lib-imsdpl.so 
-vendor/lib/lib-imscamera.so 
-vendor/lib/lib-imsqimf.so 
-vendor/lib/lib-imsrcs.so 
-vendor/lib/lib-imsrcscm.so 
-vendor/lib/lib-imsrcscmclient.so 
-vendor/lib/lib-imsrcscmservice.so 
-vendor/lib/lib-imss.so 
-vendor/lib/lib-imsSDP.so 
-vendor/lib/lib-imsvt.so 
-vendor/lib/lib-imsxml.so
-vendor/lib/lib-rcsimssjni.so 
-vendor/lib/lib-rcsjni.so 
-vendor/lib/lib-rtpcommon.so 
-vendor/lib/lib-rtpcore.so 
-vendor/lib/lib-rtpdaemoninterface.so 
-vendor/lib/lib-rtpsl.so 
-vendor/lib/libmmrtpencoder.so 
-vendor/lib/libmmrtpencoder.so 
-vendor/lib64/lib-dplmedia.so
-vendor/lib64/lib-imsdpl.so
-vendor/lib64/lib-imscamera.so
-vendor/lib64/lib-imsqimf.so 
-vendor/lib64/lib-imsrcs.so 
-vendor/lib64/lib-imsrcscm.so 
-vendor/lib64/lib-imsrcscmclient.so 
-vendor/lib64/lib-imsrcscmservice.so 
-vendor/lib64/lib-imss.so 
-vendor/lib64/lib-imsSDP.so 
-vendor/lib64/lib-imsvt.so 
-vendor/lib64/lib-imsxml.so 
-vendor/lib64/lib-rcsimssjni.so 
-vendor/lib64/lib-rcsjni.so 
-vendor/lib64/lib-rtpcommon.so 
-vendor/lib64/lib-rtpcore.so
-vendor/lib64/lib-rtpdaemoninterface.so 
-vendor/lib64/lib-rtpsl.so 
-vendor/lib64/libmmrtpencoder.so 
-vendor/lib64/libmmrtpencoder.so 
-
-# Chromatix 32
-vendor/lib/libchromatix_imx214_2nd_common.so
-vendor/lib/libchromatix_imx214_2nd_common_snapshot.so
-vendor/lib/libchromatix_imx214_2nd_default_video.so
-vendor/lib/libchromatix_imx214_2nd_hfr_120.so
-vendor/lib/libchromatix_imx214_2nd_hfr_60.so
-vendor/lib/libchromatix_imx214_2nd_hfr_90.so
-vendor/lib/libchromatix_imx214_2nd_liveshot.so
-vendor/lib/libchromatix_imx214_2nd_preview.so
-vendor/lib/libchromatix_imx214_2nd_snapshot.so
-vendor/lib/libchromatix_imx214_2nd_snapshot_hdr.so
-vendor/lib/libchromatix_imx214_2nd_video_hdr.so
-vendor/lib/libchromatix_imx214_common.so
-vendor/lib/libchromatix_imx214_common_snapshot.so
-vendor/lib/libchromatix_imx214_default_video.so
-vendor/lib/libchromatix_imx214_hfr_120fps.so
-vendor/lib/libchromatix_imx214_hfr_60fps.so
-vendor/lib/libchromatix_imx214_hfr_90fps.so
-vendor/lib/libchromatix_imx214_liveshot.so
-vendor/lib/libchromatix_imx214_preview.so
-vendor/lib/libchromatix_imx214_snapshot.so
-vendor/lib/libchromatix_imx214_snapshot_hdr.so
-vendor/lib/libchromatix_imx214_video_hdr.so
-vendor/lib/libchromatix_ov5648_f_2nd_common.so
-vendor/lib/libchromatix_ov5648_f_2nd_common_snapshot.so
-vendor/lib/libchromatix_ov5648_f_2nd_default_video.so
-vendor/lib/libchromatix_ov5648_f_2nd_default_video_hd.so
-vendor/lib/libchromatix_ov5648_f_2nd_preview.so
-vendor/lib/libchromatix_ov5648_f_2nd_snapshot.so
-vendor/lib/libchromatix_ov5648_f_2nd_zsl.so
-vendor/lib/libchromatix_ov5648_f_common.so
-vendor/lib/libchromatix_ov5648_f_common_snapshot.so
-vendor/lib/libchromatix_ov5648_f_default_video.so
-vendor/lib/libchromatix_ov5648_f_default_video_hd.so
-vendor/lib/libchromatix_ov5648_f_preview.so
-vendor/lib/libchromatix_ov5648_f_snapshot.so
-vendor/lib/libchromatix_ov5648_f_zsl.so
-
-# Chromatix 64
-vendor/lib64/libchromatix_imx214_snapshot_hdr.so
 
 # Camera
 bin/mm-qcamera-daemon
@@ -217,16 +98,53 @@ etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/cpp_firmware_v1_4_0.fw
 
-# Bins
-bin/irsc_util
-bin/rfs_access
-bin/ta_qmi_service
+# Chromatix 32
+vendor/lib/libchromatix_imx214_2nd_common.so
+vendor/lib/libchromatix_imx214_2nd_common_snapshot.so
+vendor/lib/libchromatix_imx214_2nd_default_video.so
+vendor/lib/libchromatix_imx214_2nd_hfr_120.so
+vendor/lib/libchromatix_imx214_2nd_hfr_60.so
+vendor/lib/libchromatix_imx214_2nd_hfr_90.so
+vendor/lib/libchromatix_imx214_2nd_liveshot.so
+vendor/lib/libchromatix_imx214_2nd_preview.so
+vendor/lib/libchromatix_imx214_2nd_snapshot.so
+vendor/lib/libchromatix_imx214_2nd_snapshot_hdr.so
+vendor/lib/libchromatix_imx214_2nd_video_hdr.so
+vendor/lib/libchromatix_imx214_common.so
+vendor/lib/libchromatix_imx214_common_snapshot.so
+vendor/lib/libchromatix_imx214_default_video.so
+vendor/lib/libchromatix_imx214_hfr_120fps.so
+vendor/lib/libchromatix_imx214_hfr_60fps.so
+vendor/lib/libchromatix_imx214_hfr_90fps.so
+vendor/lib/libchromatix_imx214_liveshot.so
+vendor/lib/libchromatix_imx214_preview.so
+vendor/lib/libchromatix_imx214_snapshot.so
+vendor/lib/libchromatix_imx214_snapshot_hdr.so
+vendor/lib/libchromatix_imx214_video_hdr.so
+vendor/lib/libchromatix_ov5648_f_2nd_common.so
+vendor/lib/libchromatix_ov5648_f_2nd_common_snapshot.so
+vendor/lib/libchromatix_ov5648_f_2nd_default_video.so
+vendor/lib/libchromatix_ov5648_f_2nd_default_video_hd.so
+vendor/lib/libchromatix_ov5648_f_2nd_preview.so
+vendor/lib/libchromatix_ov5648_f_2nd_snapshot.so
+vendor/lib/libchromatix_ov5648_f_2nd_zsl.so
+vendor/lib/libchromatix_ov5648_f_common.so
+vendor/lib/libchromatix_ov5648_f_common_snapshot.so
+vendor/lib/libchromatix_ov5648_f_default_video.so
+vendor/lib/libchromatix_ov5648_f_default_video_hd.so
+vendor/lib/libchromatix_ov5648_f_preview.so
+vendor/lib/libchromatix_ov5648_f_snapshot.so
+vendor/lib/libchromatix_ov5648_f_zsl.so
 
-# Modem
-bin/netmgrd
-bin/rmt_storage
-lib/libpin-cache.so
-lib64/libpin-cache.so
+# Chromatix 64
+vendor/lib64/libchromatix_imx214_snapshot_hdr.so
+
+# Keymaster
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
 
 # DRM
 bin/qseecomd 
@@ -250,35 +168,3 @@ vendor/lib64/libssd.so
 vendor/lib/libwvdrm_L1.so 
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so 
-
-# Others script
-#etc/init.ath3k.bt.sh          
-#etc/init.qcom.coex.sh         
-#etc/init.qcom.rootagent.sh
-#etc/init.crda.sh              
-#etc/init.qcom.debug.sh        
-#etc/init.qcom.sdio.sh     
-#etc/init.goldfish.sh          
-#etc/init.qcom.efs.sync.sh     
-#etc/init.qcom.uicc.sh     
-#etc/init.qcom.audio.sh        
-#etc/init.qcom.fm.sh           
-#etc/init.qcom.wifi.sh     
-#etc/init.qcom.bt.sh           
-#etc/init.qcom.post_boot.sh    
-#etc/init.qcom.zram.sh 
-
-# Time
-bin/time_daemon
-vendor/lib/libtime_genoff.so
-vendor/lib64/libtime_genoff.so
-
-# SoundFX
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
-
-# UICC
-bin/usb_uicc_client
-etc/init.qcom.uicc.sh
-

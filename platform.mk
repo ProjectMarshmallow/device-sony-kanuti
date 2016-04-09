@@ -23,16 +23,11 @@ SONY_PROPRIETARY := device/sony/kanuti/proprietary
 # Media
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    $(SONY_ROOT)/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-    $(SONY_ROOT)/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
     $(SONY_ROOT)/system/etc/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml
-
-# Charger
-PRODUCT_COPY_FILES += \
-    $(SONY_PROPRIETARY)/bin/charger:root/sbin/charger
+    $(SONY_ROOT)/system/etc/audio_platform_info.xml:system/etc/audio_platform_info.xml
 
 # Qualcom WiFi
 PRODUCT_COPY_FILES += \
@@ -41,7 +36,7 @@ PRODUCT_COPY_FILES += \
 
 # Qualcom BT
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh 
+    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -55,15 +50,15 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/usr/idc/cyttsp4_mt.idc:system/usr/idc/cyttsp4_mt.idc \
     $(SONY_ROOT)/system/usr/idc/cyttsp5_mt.idc:system/usr/idc/cyttsp5_mt.idc
 
-# Device Specific Hardware
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
-
 # Configs
 PRODUCT_COPY_FILES += \
     $(SONY_PROPRIETARY)/etc/data/dsi_config.xml:system/etc/data/dsi_config.xml \
     $(SONY_PROPRIETARY)/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
     $(SONY_PROPRIETARY)/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml 
+
+# Device Specific Hardware
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
 # Platform Init
 PRODUCT_PACKAGES += \
@@ -71,10 +66,10 @@ PRODUCT_PACKAGES += \
     init.kanuti.pwr
 
 # NFC packages
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    NfcNci \
-    Tag
+#PRODUCT_PACKAGES += \
+#    com.android.nfc_extras \
+#    NfcNci \
+#    Tag
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -99,19 +94,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keystore.msm8916
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.kanuti
-
-# Simple PowerHAL
-PRODUCT_PACKAGES += \
-    power.kanuti
-
-# Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.bt.hci_transport=smd
-
-# Prebuilts
+# Proprietary
 PRODUCT_PACKAGES += \
 	Bluetooth_cal \
 	General_cal \
@@ -164,11 +147,9 @@ PRODUCT_PACKAGES += \
 	libpn547_fw \
 	libbtnv
 
-# RIL
-PRODUCT_PACKAGES += \
-    libcnefeatureconfig \
-    librmnetctl \
-    libxml2
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.bt.hci_transport=smd
 
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \

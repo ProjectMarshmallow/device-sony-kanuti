@@ -10,5 +10,5 @@ export BOARDCONFIGVENDOR=false
 export BOARD_VENDOR_PLATFORM=kanuti
 export TARGET_BOARD_PLATFORM=msm8916
 
-../sony_common/extract-files.sh $@
-../sony_common/setup-makefiles.sh
+../common/extract-files.sh $@
+../common/setup-makefiles.sh
