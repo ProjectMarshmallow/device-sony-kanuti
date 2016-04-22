@@ -78,7 +78,18 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8916
+    gps.msm8916 \
+    gps.conf \
+    libutils \
+    libcutils \
+    liblog \
+    libdl \
+    libgps.utils \
+    libloc_core
+
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
+#    $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 # CAMERA
 PRODUCT_PACKAGES += \
@@ -144,6 +155,10 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
+
+# PERFD
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # RILD
 PRODUCT_PROPERTY_OVERRIDES += \

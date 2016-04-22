@@ -73,6 +73,7 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # NFC
 NFC_NXP_CHIP_TYPE := PN547C2
+BOARD_NFC_CHIPSET := pn544
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/kanuti/sepolicy

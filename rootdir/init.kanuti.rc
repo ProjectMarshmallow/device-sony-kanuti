@@ -31,10 +31,23 @@ on boot
     #Prevent full CPU suspension
     write /sys/power/wake_lock "mylockname"
 
+    chown system system /dev/proximity
+    chown system system /sys/class/capella_sensors/proximity/ps_adc
+    chown system system /sys/class/capella_sensors/proximity/ps_thd
+    chown system system /sys/class/capella_sensors/proximity/ps_conf
+    chown system system /sys/class/capella_sensors/lightsensor/ls_ir_ink
+    chmod 0600 /dev/proximity
+
 service sensord /system/vendor/bin/sensord
     class main
     user system
     group system
+
+service sensorrestore /system/bin/sensorrestore
+    class main
+    user system
+    group system
+    oneshot
 
 # OSS WLAN setup
 service macaddrsetup /system/bin/macaddrsetup /sys/devices/fb000000.qcom,wcnss-wlan/wcnss_mac_addr
@@ -90,3 +103,41 @@ on property:bluetooth.hciattach=true
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
+
+on property:sys.psensor.skip_event=0
+    write /sys/class/capella_sensors/proximity/ps_skip_event 0
+
+on property:sys.psensor.skip_event=1
+    write /sys/class/capella_sensors/proximity/ps_skip_event 1
+
+# Define fastmmi
+service fastmmi /system/bin/mmi
+    user root
+    group root
+    disabled
+
+on mmi
+    start fastmmi
+
+service vm_bms /system/bin/vm_bms
+    user root
+    group root
+    disabled
+
+service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+
+service usb_uicc_daemon /system/bin/usb_uicc_client
+    class main
+    user system
+    group system log net_raw
+    oneshot
+
+on property:sys.usb_uicc.enabled=1
+    start usb_uicc_enable
+
+on property:sys.usb_uicc.enabled=0
+    start usb_uicc_enable
