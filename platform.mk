@@ -65,6 +65,12 @@ PRODUCT_COPY_FILES += \
     $(SONY_PROPRIETARY)/etc/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
     $(SONY_PROPRIETARY)/etc/data/qmi_config.xml:system/etc/data/qmi_config.xml 
 
+# Thetering
+PRODUCT_COPY_FILES += \
+    $(SONY_ROOT)/system/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
+    $(SONY_ROOT)/system/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
+    $(SONY_ROOT)/system/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf
+
 # Platform Init
 PRODUCT_PACKAGES += \
     fstab.kanuti \

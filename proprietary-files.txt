@@ -39,6 +39,9 @@ vendor/etc/msm_irqbalance.conf
 # Battery
 bin/vm_bms
 
+# Sensor Restore Calib
+bin/sensorrestore
+
 # SCD 
 bin/scd
 bin/scdnotifier

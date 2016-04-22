@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-AOSP_KERNEL := true
+AOSP_KERNEL := false
 TARGET_BOARD_PLATFORM := msm8916
 
 TARGET_ARCH := arm64
@@ -28,7 +28,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a9
 
 # Kernel properties
-ifeq ($(AOSP_KERNEL), false)
+ifeq ($(AOSP_KERNEL), true)
 TARGET_KERNEL_CONFIG := aosp_kanuti_tulip_defconfig
 TARGET_KERNEL_SOURCE := kernel/sony/kernel-aosp
 else
